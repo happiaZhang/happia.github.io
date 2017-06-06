@@ -1,0 +1,122 @@
+#wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#menu {
+	position: relative;
+	padding: 10px 100px;
+	text-align: center;
+}
+#menu .btn-menu {
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	font-size: 28px;
+}
+#menu .ss-logo {
+	font-size: 28px;
+}
+#menu .btn-demo {
+	position: absolute;
+	top: 10px;
+	right: 100px;
+	padding: 5px 10px;
+	border: 1px solid #f00;
+	border-radius: 10px;
+}
+
+#slideshow {
+	position: absolute;
+	top: 56px;
+	left: 0;
+	right: 0;
+	background-color: #ccc;
+	z-index: 10;
+}
+#slideshow ul {
+	padding: 20px 0;
+}
+#slideshow ul li {
+	padding: 10px 0;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+#slideshow ul li:hover {
+	background-color: #333;
+}
+
+#carousel {
+	position: relative;
+	overflow: auto;
+}
+#carousel ul li {
+	height: 620px;
+	float: left;
+	text-align: center;
+}
+#carousel .dots {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	text-align: center;
+}
+#carousel .dots li {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px;
+	text-indent: -999em;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	opacity: .4;
+	-webkit-transition: background .5s, opacity .5s;
+	-moz-transition: background .5s, opacity .5s;
+	transition: background .5s, opacity .5s;
+}
+#carousel .dots li.active {
+	background: #fff;
+	opacity: 1;
+}
+#carousel .carousel-arrow.prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 200px;
+}
+#carousel .carousel-arrow.next {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 200px;
+}
+#carousel .carousel-arrow.prev:hover,
+#carousel .carousel-arrow.next:hover {
+	background-color: rgba(255, 255, 255, .3);
+}
+#carousel .glyphicon-menu-left {
+	position: absolute;
+	top: 45%;
+	left: 40%;
+	font-size: 32px;
+	color: #fff;
+}
+#carousel .glyphicon-menu-right {
+	position: absolute;
+	top: 45%;
+	right: 40%;
+	font-size: 32px;
+	color: #fff;
+}

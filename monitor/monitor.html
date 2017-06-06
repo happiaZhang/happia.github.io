@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/chosen.css">
+    <link rel="stylesheet" href="css/monitor.css">
+    
+  </head>
+  <body>
+    <div id="wrapper">
+	  <div id="sidebar">
+        <div class="monitor-logo">MONITOR</div>
+        <ul class="monitor-items">
+          <li class="monitor-item-log" type="log"><span class="glyphicon glyphicon-file"></span>日志</li>
+          <li class="monitor-item-service" type="service"><span class="glyphicon glyphicon-blackboard"></span>服务</li>
+          <li class="monitor-item-history" type="history"><span class="glyphicon glyphicon-time"></span>历史</li>
+          <li class="monitor-item-relation" type="relation"><span class="glyphicon glyphicon-link"></span>绑定</li>
+          <li class="monitor-item-user" type="user"><span class="glyphicon glyphicon-user"></span>账号</li>
+          <li class="monitor-item-sysmsg selected" type="sysmsg"><span class="glyphicon glyphicon-envelope"></span>通知</li>
+        </ul>
+      </div>
+      <div id="main">
+        <div class="monitor-header">
+          <span class="monitor-type">日志监控</span>
+          <a class="dropdown-container" style="display:none">
+            <span class="dropdown-level">日志级别</span>
+          </a>
+          <ul class="dropdown-memu none">
+            <li name="all">all<label class="selected">&radic;</label></li>
+            <li name="error">error<label>&radic;</label></li>
+            <li name="warn">warn<label>&radic;</label></li>
+          </ul>
+          <div class="search-container none">
+          	<input class="search-input" type="text" placeholder="请输入服务名">
+            <span class="search-icon glyphicon glyphicon-search"></span>
+          </div>
+          <span class="logout-icon glyphicon glyphicon-log-out" title="退出"></span>
+        </div>
+        
+        <div class="monitor-body none" type="log">
+            <div class="monitor-title">
+              <table class="monitor-title-log"><thead>
+                <tr>
+                  <th class="log-level">级别</th>
+                  <th class="log-title">服务名</th>
+                  <th class="log-content">内容</th>
+                  <th class="log-time">时间</th>
+                </tr>
+              </thead></table>
+            </div>
+            
+            <div class="monitor-content">
+              <table class="monitor-content-log"><tbody>
+                <!--<tr>
+                  <td class="log-level">级别</td>
+                  <td class="log-title">服务名</td>
+                  <td class="log-content">内容</td>
+                  <td class="log-time">时间</td>
+                </tr>-->
+                <tr>
+				  <td class="log-level">warn</td>
+				  <td class="log-title">proxySideA</td>
+				  <td class="log-content">Cost too many time(158 ms),src serial:75653,content:Response-serial:1786460,type:2,cmd:0xb0002f,app:11,funcIdx:47,bodysize:19,src:0xa4,dst:0x67,code:0,options:0,seq:0,codeinfo:0</td>
+				  <td class="log-time">2015年7月8日 下午8:15:41</td>
+				</tr>
+              </tbody></table>
+            </div>
+            
+        </div> <!-- monitor-body -->
+        
+        <div class="monitor-body none" type="service">
+          <div class="monitor-service-list">
+          <table id="monitor-service" class="monitor-service">
+              <tbody>
+                <tr>
+                  <td class="service-addr">地址</td>
+                  <td class="service-name">服务名</td>
+                  <td class="service-id">ID</td>
+                  <td class="service-t">T</td>
+                  <td class="service-ip">IP</td>
+                  <td class="service-start-time">开始时间</td>
+                  <td class="service-login-time">登录时间</td>
+                  <td class="service-beat-time">心跳时间</td>
+                  <td class="service-cpu">CPU</td>
+                  <td class="service-memory-max">高峰内存</td>
+                  <td class="service-memory">内存</td>
+                  <td class="service-queue-send">发送队列</td>
+                  <td class="service-queue-receive">接收队列</td>
+                  <td class="service-queue-server">服务端队列</td>
+                  <td class="service-request-send">发送请求</td>
+                  <td class="service-request-receive">接收请求</td>
+                  <td class="service-response-send">发送应答</td>
+                  <td class="service-response-receive">接收应答</td>
+                  <td class="service-publish-send">发送发布</td>
+                  <td class="service-publish-receive">接收发布</td>
+                </tr>
+            	<tr>
+                  <td class="service-addr">9d</td>
+                  <td class="service-name">proxySideB<br><span class="service-uuid">(proxyproxySideBproxySideB)</span></td>
+                  <td class="service-id">65</td>
+                  <td class="service-t">1</td>
+                  <td class="service-ip">172.16.17.103</td>
+                  <td class="service-start-time">2015-06-29 18:49:40</td>
+                  <td class="service-login-time">2015-06-29 18:49:40</td>
+                  <td class="service-beat-time">2015-06-29 18:49:40</td>
+                  <td class="service-cpu">0</td>
+                  <td class="service-memory-max">28404</td>
+                  <td class="service-memory">28404</td>
+                  <td class="service-queue-send">0</td>
+                  <td class="service-queue-receive">0</td>
+                  <td class="service-queue-server">0</td>
+                  <td class="service-request-send">0/0</td>
+                  <td class="service-request-receive">38/1324</td>
+                  <td class="service-response-send">38/15507</td>
+                  <td class="service-response-receive">0/0</td>
+                  <td class="service-publish-send">0/0</td>
+                  <td class="service-publish-receive">0/0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> <!-- monitor-body -->
+       
+        <div class="monitor-body none" type="history">
+          <p class="query-nav">
+            <a class="query-nav-item selected" type="service-log">服务日志</a>
+            <a class="query-nav-item" type="service-online">服务在线</a>
+            <a class="query-nav-item" type="user-online">用户在线</a>
+          </p>
+          
+          <div class="query-result" type="service-log">
+            <div class="query-result-content">
+              <div class="query-result-title">
+                <table class="query-history-title"><thead><tr>
+              	  <th class="history-no">序号</th>
+                  <th class="history-service">服务名</th>
+                  <th class="history-content">内容</th>
+                  <th class="history-level">级别</th>
+                </tr></thead></table>
+              </div>
+              <div class="query-result-article">
+                <table class="query-history-content"><tbody>
+                  <tr>
+                    <td class="history-no">序号</td>
+                    <td class="history-service">服务名</td>
+                    <td class="history-content">内容</td>
+                    <td class="history-level">级别</td>
+                  </tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="query-result-bottom">
+            	<a class="btn btn-first">首页</a>
+                <a class="btn btn-prev inactive">上一页</a>
+				<a class="btn btn-next inactive">下一页</a>
+            </div>
+          </div> <!-- query-result -->
+          
+          <div class="query-result none" type="service-online">
+            <div class="query-result-content">
+              <div class="query-result-title">
+                <table class="query-service-online-title"><thead><tr>
+              	  <th class="service-online-no">序号</th>
+                  <th class="service-online-name">服务名</th>
+                  <th class="service-online-status">状态</th>
+                </tr></thead></table>
+              </div>
+              <div class="query-result-article">
+                <table class="query-service-online-content"><tbody>
+                  <tr>
+                    <td class="service-online-no">序号</td>
+                    <td class="service-online-name">服务名</td>
+                    <td class="service-online-status">状态</td>
+                  </tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="query-result-bottom">
+            	<a class="btn btn-first">首页</a>
+                <a class="btn btn-prev inactive">上一页</a>
+				<a class="btn btn-next inactive">下一页</a>
+            </div>
+          </div> <!-- query-result -->
+          
+          <div class="query-result none" type="user-online">
+            <div class="query-result-content">
+              <div class="query-result-title">
+                <table class="query-user-online-title"><thead><tr>
+              	  <th class="user-online-no">序号</th>
+                  <th class="user-online-name">用户名</th>
+                  <th class="user-online-account">账号</th>
+                  <th class="user-online-status">状态</th>
+                </tr></thead></table>
+              </div>
+              <div class="query-result-article">
+                <table class="query-user-online-content"><tbody>
+                  <tr>
+                    <td class="user-online-no">序号</td>
+                    <td class="user-online-name">用户名</td>
+                    <td class="user-online-account">账号</td>
+                    <td class="user-online-status">状态</td>
+                  </tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="query-result-bottom">
+            	<a class="btn btn-first">首页</a>
+                <a class="btn btn-prev inactive">上一页</a>
+				<a class="btn btn-next inactive">下一页</a>
+            </div>
+          </div> <!-- query-result -->
+          
+        </div> <!-- monitor-body -->
+        
+        <div class="monitor-body none" type="relation">
+          <p class="relation-operate">
+            <a class="btn btn-add">添加</a>
+            <a class="btn btn-alter inactive">编辑</a>
+            <a class="btn btn-delete inactive">删除</a>
+          </p>
+          <div class="relation-content">
+            <div class="relation-header">
+              <table class="monitor-relation-title"><thead><tr>
+                <th class="relation-checkbox"><input class="checkAll" type="checkbox"></th>
+                <th class="relation-user">用户</th>
+                <th class="relation-group">绑定群</th>
+              </tr></thead></table>
+            </div>
+            <div class="relation-body">
+              <table class="monitor-relation-content"><tbody>
+                <tr>
+                  <td class="relation-checkbox"><input type="checkbox"></td>
+                  <td class="relation-user">zhangzheng</td>
+                  <td class="relation-group">sumscope-羽毛球俱乐部</td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div> <!-- monitor-body -->
+        
+        <div class="monitor-body none" type="user">
+          <p class="user-operate">
+            <a class="btn btn-add">添加</a>
+            <a class="btn btn-alter inactive">编辑</a>
+            <a class="btn btn-delete inactive">删除</a>
+          </p>
+          <div class="user-content">
+            <div class="user-header">
+              <table class="monitor-user-title"><thead><tr>
+                <th class="user-account">账号</th>
+                <th class="user-password">密码</th>
+                <th class="user-company">所属机构</th>
+              </tr></thead></table>
+            </div>
+            <div class="user-body">
+              <table class="monitor-user-content"><tbody>
+                <tr>
+                  <td class="user-user">zhangzheng</td>
+                  <td class="user-password">zhangzheng</td>
+                  <td class="user-company">宁波森浦融讯科技有限公司</td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div> <!-- monitor-body -->
+        
+        
+        <div class="monitor-body" type="sysmsg">
+          <div class="sysmsg-body">
+            <div class="sysmsg-content" contenteditable="true"></div>
+            <div class="sysmsg-tool">
+              <a class="glyphicon glyphicon-picture"><input class="btn-uploadfile" type="file"></a>
+              <a class="btn btn-send">发送</a>
+            </div>
+            <img id="hidden-img" style="display:none">
+          </div>
+        </div> <!-- monitor-body -->
+        
+      </div>
+	</div>
+    
+    <!-- Popup window -->
+    <div class="popwin" id="bindingRelation">
+      <div class="popwin-header">添加机构群绑定</div>
+      <div class="popwin-body">
+      	<div class="popwin-item">
+          <label class="popwin-item-title">用户：</label><select class="popwin-item-select"><option></option></select>
+          <div class="clearB"></div>
+        </div>
+        <div class="popwin-item">
+          <label class="popwin-item-title">机构群：</label><select class="popwin-item-select"><option></option></select>
+          <div class="clearB"></div>
+        </div>
+      </div>
+      <div class="popwin-footer">
+        <a class="btn btn-cancel">取消</a>
+        <a class="btn btn-confirm">确认</a>
+      </div>
+    </div>
+    
+    <div class="popwin" id="monitorUser">
+      <div class="popwin-header">添加监控账号</div>
+      <div class="popwin-body">
+      	<div class="popwin-item">
+          <label class="popwin-item-title">账号：</label><input class="popwin-item-input" type="text">
+          <div class="clearB"></div>
+        </div>
+        <div class="popwin-item">
+          <label class="popwin-item-title">密码：</label><input class="popwin-item-input" type="password">
+          <div class="clearB"></div>
+        </div>
+        <div class="popwin-item">
+          <label class="popwin-item-title">所属机构：</label><select class="popwin-item-select"><option></option></select>
+          <div class="clearB"></div>
+        </div>
+      </div>
+      <div class="popwin-footer">
+        <a class="btn btn-cancel">取消</a>
+        <a class="btn btn-confirm">确认</a>
+      </div>
+    </div>
+    
+    <div class="popwin" id="tipWin" style="width:350px;">
+      <div class="popwin-header">解除绑定</div>
+      <div class="popwin-body">
+        <p class="tip-content">您确认要解除该绑定关系吗？</p>
+      </div>
+      <div class="popwin-footer">
+        <a class="btn btn-cancel">取消</a>
+        <a class="btn btn-confirm">确认</a>
+      </div>
+    </div>
+    
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/Long.js"></script>
+    <script src="js/ByteBufferAB.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/table_freeze.js"></script>
+    <script src="js/tinybox.js"></script>
+    <script src="js/MGchosen.js"></script>
+	<script src="js/monitor.js"></script>
+	<!--<script src="js/md5.js"></script>
+	<script src="js/jquery.json.js"></script>
+	<script src="js/Long.min.js"></script>
+	<script src="js/ByteBufferAB.min.js"></script>
+	<script src="js/ProtoBuf.min.js"></script>
+	<script src="js/observer.js"></script>
+	<script src="js/databus.js"></script>
+	<script src="js/monitor_socket.js"></script>-->
+  </body>
+</html>

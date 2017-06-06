@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/guider.css">
+    
+  </head>
+  <body style="background-color: #edf0f0;">
+    <div class="guider-nav">
+    	<p class="guider-user-header">成员列表</p>
+        <ul id="guider-inst-user">
+          <li>
+            <div class="guider-inst">
+              <span class="guider-inst-checkbox"><input type="checkbox"></span>
+              <span class="guider-inst-name textElip">机构A</span>
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <div class="clearB"></div>
+            </div>
+            <ul class="guider-user none">
+              <li>
+                <span class="guider-user-checkbox"><input type="checkbox"></span>
+                <span class="guider-user-name textElip">用户A</span>
+              </li>
+              <li>
+                <span class="guider-user-checkbox"><input type="checkbox"></span>
+                <span class="guider-user-name textElip">用户B</span>
+              </li>
+              <li>
+                <span class="guider-user-checkbox"><input type="checkbox"></span>
+                <span class="guider-user-name textElip">用户C</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <div class="guider-body">
+  	  <div id="guider-action">
+	    <a class="guider-files">请选择上传的图片</a>
+	    <input class="guider-files-hidden" type="file" multiple>
+	    <a class="guider-upload grey">上传</a>
+	    <div class="clearB"></div>
+	  </div>
+	  <div id="guider-content">
+	    <table id="talbe-guider-files">
+	      <thead>
+	        <tr>
+	          <th class="guider-pic">图片预览</th>
+	          <th class="guider-rank">设置次序</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <!-- <tr>
+	          <td class="guider-pic"><img src="" width="200" height="200"></td>
+	          <td class="guider-rank"><input type="text"></td>
+	        </tr> -->
+	      </tbody>
+	    </table>
+	  </div>
+    </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/guider.js"></script>
+  </body>
+</html>

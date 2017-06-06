@@ -1,0 +1,209 @@
+html {
+	font-family: "微软雅黑", "宋体" ,"Times New Roman", Times, serif;
+	font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body{
+	overflow: hidden;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+}
+body,
+div,
+p,
+ul,
+li,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+span,
+button,
+a,
+input,
+label,
+select,
+img,
+textarea {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+li {
+	list-style: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+textarea {
+	resize: none;
+	overflow: hidden;
+}
+a {
+	cursor: pointer;
+}
+button:focus,
+input:focus,
+textarea:focus {
+	outline: 0 none;
+}
+.none {
+	display: none;
+}
+.clearB {
+	clear: both;
+}
+.textElip {
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@font-face {
+	font-family:'Glyphicons Halflings';
+	src:url('../fonts/glyphicons-halflings-regular.eot');
+	src:url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),url('../fonts/glyphicons-halflings-regular.woff') format('woff'),url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+	position:relative;
+	top:1px;
+	display:inline-block;
+	font-family:'Glyphicons Halflings';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.glyphicon-time:before {
+	content: "\e023";
+}
+.glyphicon-user:before {
+	content: "\e008";
+}
+.glyphicon-link:before {
+	content: "\e144";
+}
+.glyphicon-remove:before {
+	content: "\e014";
+}
+.glyphicon-chevron-down:before {
+	content: "\e114";
+}
+.glyphicon-search:before {
+	content: "\e003";
+}
+.glyphicon-envelope:before {
+	content: "\2709";
+}
+.glyphicon-lock:before {
+	content: "\e033";
+}
+.glyphicon-log-out:before {
+	content: "\e163";
+}
+.glyphicon-signal:before {
+	content: "\e018";
+}
+.glyphicon-file:before {
+	content: "\e022";
+}
+.glyphicon-blackboard:before {
+	content: "\e218";
+}
+.glyphicon-picture:before {
+	content: "\e060";
+}
+.btn {
+	display: inline-block;
+	padding: 5px 8px;
+	background-color: #26a4a7;
+	color: #fff;
+	font-weight: bold;
+}
+.btn.inactive {
+	background-color: #b4b6bd;
+}
+.tmask {
+	background: black;
+}
+.tcontent {
+	background: #fff;
+}
+.tclose {
+	position: absolute;
+	top: 14px;
+	right: 10px;
+	display:inline-block;
+	font-size: 14px;
+	color: #fff;
+	font-family:'Glyphicons Halflings';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	cursor: pointer;
+}
+.tclose:before {
+	content: "\e014";
+}
+.popwin {
+	display: none;
+}
+.popwin-header {
+	position: relative;
+	padding: 10px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #26a4a7;
+}
+.popwin-body {
+	padding: 20px;
+}
+.popwin-body .tip-content {
+	padding: 10px;
+	text-align: center;
+}
+.popwin-body .popwin-item {
+	padding: 10px 0;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.popwin-body .popwin-item .popwin-item-title {
+	display: inline-block;
+	float: left;
+	text-align: right;
+	width: 80px;
+	margin-right: 15px;
+}
+.popwin-body .popwin-item .popwin-item-input {
+	display: inline-block;
+	float: left;
+	padding: 5px 8px;
+	width: 200px;
+	border: 1px solid #d2d6de;
+}
+.popwin-body .popwin-item .popwin-item-select {
+	display: inline-block;
+	float: left;
+	padding: 4px 8px;
+	width: 218px;
+	border: 1px solid #d2d6de;
+
+}
+.popwin-body .popwin-item .popwin-item-input:hover {
+	border-color: #66afe9;
+}
+.popwin-footer {
+	padding: 20px 0;
+	border-top: 1px solid #26a4a7;
+	text-align: center;
+}
+.popwin-footer .btn-cancel {
+	margin-right: 10px;
+}

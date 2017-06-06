@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- here is JS files -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/Long.js"></script>
+    <script src="js/ByteBufferAB.js"></script>
+    <script src="js/exif.min.js"></script>
+    <script src="js/processImg.js"></script>
+    
+    <!-- here is CSS -->
+    <style type="text/css">
+    	* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		input:focus {
+			outline: none;
+		}
+		#wrapper {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			width: 500px;
+			height: 500px;
+			margin-top: -250px;
+			margin-left: -250px;
+		}
+		.content-area {
+			width: 458px;
+			height: 408px;
+			padding: 20px;
+			border: 1px solid rgb(0, 184, 255);
+			overflow: auto;
+		}
+		.content-footer {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 13px 0;
+		}
+		#btn-pic,
+		#btn-file,
+		.btn-send {
+			display: inline-block;
+		}
+		#btn-pic,
+		.btn-send {
+			padding: 3px 5px;
+			border: 1px solid rgb(0, 184, 255);
+			background-color: rgb(0, 184, 255);
+			color: #fff;
+		}
+		.btn-send {
+			float: right;
+		}
+		#btn-file {
+			position: absolute;
+			top: 13px;
+			left: 0;
+			width: 64px;
+			height: 24px;
+			opacity: 0;
+		}
+		#result {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			right: 20px;
+			bottom: 20px;
+			padding: 20px 0;
+			overflow: auto;
+		}
+    </style>
+    
+    <script type="text/javascript">
+		
+		var _selection = window.getSelection();
+		var fileReader = new FileReader();
+		var picInfo = {
+				refWidth: 200,
+				refHeight: 200
+			};
+		
+		$(document).ready(function() {
+
+			/*compressImg('btn-file', 'hidden-img', 200, 200, function(src) {
+				var imgNode = document.createElement("img");
+				imgNode.src = src;
+				
+				var _range = _selection.getRangeAt(0);
+				_range.insertNode(imgNode);
+			});*/
+			
+			
+			function handlePaste(e) {
+				
+				var _textarea = document.createElement("textarea");
+				$(_textarea).val(e.clipboardData.getData("text"));
+				e.returnValue = false;
+				
+				var txtNode = document.createTextNode($(_textarea).val());				
+				var _range = _selection.getRangeAt(0);
+				_range.insertNode(txtNode);
+				_range.setStart(txtNode,txtNode.length);
+				_range.collapse(true);
+				
+				_selection.removeAllRanges();
+				_selection.addRange(_range);
+			}
+			
+			$("#editor")[0].onpaste = handlePaste;
+			
+			$(".content-footer").delegate("#btn-file", "change", function(){
+				var files = $(this)[0].files;
+				picInfo['type'] = files[0].type;
+				picInfo['size'] = files[0].size;
+				picInfo['name'] = files[0].name;
+				if(/image\//g.test(picInfo['type'])) {
+					readPicContent(files[0], picInfo['type'], function(src) {
+						var imgNode = document.createElement("img");
+						imgNode.src = src;
+				
+						var _range = _selection.getRangeAt(0)||document.createRange();
+						_range.insertNode(imgNode);
+					});
+				} else {
+					alert("请选择图片格式的文件");
+				}
+			});
+		});
+
+		function readPicContent(file, type, callback) {
+			fileReader.readAsDataURL(file);
+			fileReader.onload = function() {
+				var _img = document.createElement("img");
+				_img.src = this.result;
+				_img.onload = function() {
+					picInfo['srcWidth'] = this.width;
+					picInfo['srcHeight'] = this.height;
+					
+					if(picInfo.srcWidth <= picInfo.refWidth 
+						&& picInfo.srcHeight <= picInfo.refHeight) {
+						picInfo['desWidth'] = picInfo.srcWidth;
+						picInfo['desHeight'] = picInfo.srcHeight;
+					} else {
+						if(picInfo.srcWidth >= picInfo.srcHeight) {
+							picInfo['desWidth'] = picInfo.refWidth;
+							picInfo['desHeight'] = parseInt(picInfo.refWidth * picInfo.srcHeight / picInfo.srcWidth);
+						} else {
+							picInfo['desHeight'] = picInfo.refHeight;
+							picInfo['desWidth'] = parseInt(picInfo.refHeight * picInfo.srcWidth / picInfo.srcHeight);
+						}
+					}
+					
+					var _canvas = document.createElement("canvas");
+	            	_canvas.setAttribute("width", picInfo.desWidth);
+					_canvas.setAttribute("height", picInfo.desHeight);
+					
+					var _context = _canvas.getContext("2d");
+					_context.drawImage(_img, 0, 0, picInfo.srcWidth, picInfo.srcHeight, 0, 0, picInfo.desWidth, picInfo.desHeight);
+					
+					$("#hidden-img").attr("src", _canvas.toDataURL(type));
+					
+					if(callback !== undefined) {callback($("#hidden-img").attr("src"))};
+				}
+			}
+		}
+    </script>
+  </head>
+  <body>
+    <div id="hidden">
+    	<img id="hidden-img" style="display:none;">
+    </div>
+    <div id="wrapper">
+        <div id="editor" class="content-area" contentEditable=true></div>
+        <div class="content-footer">
+        	<input id="btn-pic" type="button" value="插入图片">
+            <input id="btn-file" type="file">
+            <input class="btn-send" type="button" value="发 送">
+        </div>
+    </div>
+  </body>
+</html>

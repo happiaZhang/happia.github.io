@@ -1,0 +1,138 @@
+.guider-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 350px;
+	background-color: #fff;
+}
+.guider-user-header {
+	color: #797979;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 40px;
+	text-indent: 16px;
+	border-bottom: 2px solid #3bc0c3;
+}
+#guider-inst-user .guider-inst {
+	position: relative;
+	padding: 8px;
+	border-bottom: 1px solid #ccc;
+}
+.guider-inst .guider-inst-checkbox,
+.guider-inst .guider-inst-name {
+	display: inline-block;
+	line-height: 25px;
+	float: left;
+}
+.guider-inst .guider-inst-checkbox {
+	width: 10%;
+}
+.guider-inst .guider-inst-name {
+	width: 85%;
+}
+.guider-inst .glyphicon-chevron-left {
+	position: absolute;
+	top: 13px;
+	right: 8px;
+	color: #b1adad;
+}
+.guider-inst.open .glyphicon-chevron-left {
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+#guider-inst-user .guider-user {
+	background-color: #f5f5f5;
+}
+.guider-user li {
+	padding: 10px 20px;
+	border-bottom: 1px solid #e3e3e3
+}
+.guider-user .guider-user-checkbox,
+.guider-user .guider-user-name {
+	display: inline-block;
+	vertical-align: middle;
+}
+.guider-user .guider-user-checkbox {
+	width: 10%;
+}
+.guider-user .guider-user-name {
+	width: 85%;
+}
+.guider-body {
+	position: fixed;
+	top: 0;
+	left: 370px;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+}
+#guider-action {
+	position: relative;
+	padding: 20px 15px;
+}
+.guider-upload,
+.guider-files {
+	padding: 5px 8px;
+	background-color: #3bc0c3;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+.guider-upload {
+	float: right;
+}
+.guider-files-hidden {
+	position: absolute;
+	top: 20px;
+	left: 15px;
+	width: 135px;
+	opacity: 0;
+}
+#guider-content {
+	position: absolute;
+	top: 65px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+#talbe-guider-files {
+	width: 100%;
+	color: #797979;
+}
+#talbe-guider-files > thead > tr,
+#talbe-guider-files > tbody > tr {
+	background-color: #fff;
+	text-align: left;
+}
+#talbe-guider-files > tbody > tr {
+	border-bottom: 1px solid #ddd;
+}
+#talbe-guider-files > thead > tr {
+	border-bottom: 2px solid #ddd;
+	font-weight: bold;
+}
+#talbe-guider-files > tbody > tr:last-child {
+	border-bottom: 0;
+}
+#talbe-guider-files > thead > tr > th,
+#talbe-guider-files > tbody > tr > td {
+	padding: 8px;
+}
+.guider-rank {
+	width: 30%;
+}
+.guider-pic {
+	width: 70%;
+}
+.guider-rank > input {
+	padding: 5px 8px;
+	background-color: #E2E1E1;
+	border-radius: 5px;
+	color: #5A5757;
+}
+.grey {
+	background-color: #ccc;
+}

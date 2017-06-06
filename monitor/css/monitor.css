@@ -1,0 +1,478 @@
+#wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+#sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 230px;
+	background-color: #1a2942;
+}
+.monitor-logo {
+	padding: 20px 20px 20px 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	background: transparent url(../image/QMlogo.png) no-repeat 45px 18px;
+	background-size: 25px 25px;
+}
+.monitor-items li {
+	position: relative;
+	padding: 10px 20px;
+	text-align: center;
+	color: #b4b6bd;
+	cursor: pointer;
+}
+.monitor-items li .glyphicon {
+	position: absolute;
+	top: 13px;
+	left: 64px;
+	font-size: 15px;
+}
+.monitor-items li:hover {
+	color: #fff;
+}
+.monitor-items li.selected {
+	background-color: #162338;
+	color: #3bc0c3;
+}
+#main {
+	position: absolute;
+	top: 0;
+	left: 230px;
+	right: 0;
+	bottom: 0;
+}
+.monitor-header {
+	position: relative;
+	padding: 15px 20px;
+	color: #797979;
+	font-size: 16px;
+}
+.dropdown-container {
+	position: absolute; 
+	top: 0;
+	right: 40px;
+	bottom: 0;
+	display: block;
+	font-size: 12px;
+	padding: 18px;
+}
+.dropdown-container .dropdown-level:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 4px;
+	border-width: 4px;
+	border-style: solid;
+	border-color: #797979 transparent transparent transparent;
+}
+.dropdown-container:hover,
+.dropdown-container.open {
+	background-color: #1a2942;
+	color: #3bc0c3;
+}
+.dropdown-container:hover .dropdown-level:after,
+.dropdown-container.open .dropdown-level:after {
+	border-color: #3bc0c3 transparent transparent transparent;
+}
+.dropdown-memu {
+	position: absolute;
+	top: 51px;
+	right: 40px;
+	width: 120px;
+	z-index: 10;
+	padding: 5px;
+	background-color: #3bc0c3;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+}
+.dropdown-memu:after {
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -12px;
+	right: 15px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: transparent transparent #3bc0c3 transparent;
+}
+.dropdown-memu li {
+	padding: 5px 15px;
+}
+.dropdown-memu li label {
+	display: none;
+	float: right;
+}
+.dropdown-memu li label.selected {
+	display: inline-block;
+}
+.dropdown-memu li:hover {
+	background-color: #162338;
+	color: #3bc0c3;
+}
+.monitor-body {
+	position: absolute;
+	top: 51px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #edf0f0;
+	padding: 20px;
+}
+.monitor-content,
+.online-body {
+	position: absolute;
+	top: 57px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+.monitor-service-list {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+.monitor-title-log,
+.monitor-content-log,
+.monitor-service,
+.query-history-title,
+.query-history-content,
+.monitor-relation-title,
+.monitor-relation-content,
+.monitor-user-title,
+.monitor-user-content,
+.monitor-online-title,
+.monitor-online-content {
+	width: 100%;
+	word-wrap: break-word;
+	word-break: break-all;
+	color: #797979;
+}
+.monitor-title-log > thead > tr,
+.monitor-content-log > tbody > tr,
+.monitor-service > tbody > tr,
+.query-history-title > thead > tr,
+.query-history-content > tbody > tr,
+.monitor-relation-title > thead > tr,
+.monitor-relation-content > tbody > tr,
+.monitor-user-title > thead > tr,
+.monitor-user-content > tbody > tr,
+.monitor-online-title > thead > tr,
+.monitor-online-content > tbody > tr {
+	background-color: #fff;
+	text-align: left;
+}
+.monitor-content-log > tbody > tr,
+.monitor-service > tbody > tr,
+.query-history-content > tbody > tr,
+.monitor-relation-content > tbody > tr,
+.monitor-user-content > tbody > tr,
+.monitor-online-content > tbody > tr {
+	border-bottom: 1px solid #ddd;
+}
+.monitor-title-log > thead > tr,
+.monitor-service > tbody > tr:first-child,
+.query-history-title > thead > tr,
+.monitor-relation-title > thead > tr,
+.monitor-user-title > thead > tr,
+.monitor-online-title > thead > tr {
+	border-bottom: 2px solid #ddd;
+	font-weight: bold;
+}
+.monitor-content-log > tbody > tr:last-child,
+.monitor-service > tbody > tr:last-child,
+.monitor-relation-content > tbody > tr:last-child,
+.monitor-user-content > tbody > tr:last-child,
+.monitor-online-content > tbody > tr:last-child {
+	border-bottom: 0;
+}
+.monitor-title-log > thead > tr > th,
+.monitor-content-log > tbody > tr > td,
+.monitor-service > tbody > tr > td,
+.query-history-title > thead > tr > th,
+.query-history-content > tbody > tr > td,
+.monitor-relation-title > thead > tr > th,
+.monitor-relation-content > tbody > tr > td,
+.monitor-user-title > thead > tr > th,
+.monitor-user-content > tbody > tr > td,
+.monitor-online-title > thead > tr > th,
+.monitor-online-content > tbody > tr > td {
+	padding: 8px;
+}
+.monitor-content-log > tbody > tr:hover,
+.monitor-service > tbody > tr:hover,
+.query-history-content > tbody > tr:hover,
+.monitor-relation-content > tbody > tr:hover,
+.monitor-user-content > tbody > tr:hover,
+.monitor-online-content > tbody > tr:hover {
+	background-color: #f9f9f9;
+}
+.monitor-service > tbody > tr:first-child:hover {
+	background-color: #fff;
+}
+.monitor-title-log > thead > tr .log-level,
+.monitor-content-log > tbody > tr .log-level {
+	width: 10%;
+}
+.monitor-title-log > thead > tr .log-title,
+.monitor-content-log > tbody > tr .log-title {
+	width: 10%;
+}
+.monitor-title-log > thead > tr .log-content,
+.monitor-content-log > tbody > tr .log-content {
+	width: 65%;
+}
+.monitor-title-log > thead > tr .log-time,
+.monitor-content-log > tbody > tr .log-time {
+	width: 15%;
+}
+.monitor-service tr .service-addr {
+	min-width: 50px;
+}
+.monitor-service tr .service-name {
+	min-width: 100px;
+}
+.monitor-service tr .service-id {
+	min-width: 50px;
+}
+.monitor-service tr .service-t {
+	min-width: 30px;
+}
+.monitor-service tr .service-ip {
+	min-width: 120px;
+}
+.monitor-service tr .service-start-time,
+.monitor-service tr .service-login-time,
+.monitor-service tr .service-beat-time {
+	min-width: 150px;
+}
+.monitor-service tr .service-cpu {
+	min-width: 30px;
+}
+.monitor-service tr .service-memory-max,
+.monitor-service tr .service-memory {
+	min-width: 80px;
+}
+.monitor-service tr .service-queue-send,
+.monitor-service tr .service-queue-receive,
+.monitor-service tr .service-queue-server {
+	min-width: 90px;
+}
+.monitor-service tr .service-request-send,
+.monitor-service tr .service-request-receive,
+.monitor-service tr .service-response-send,
+.monitor-service tr .service-response-receive,
+.monitor-service tr .service-publish-send,
+.monitor-service tr .service-publish-receive {
+	min-width: 120px;
+}
+.query-history-title > thead > tr .history-no,
+.query-history-title > thead > tr .history-service,
+.query-history-title > thead > tr .history-level,
+.query-history-content > tbody > tr .history-no,
+.query-history-content > tbody > tr .history-service,
+.query-history-content > tbody > tr .history-level {
+	width: 10%;
+}
+.query-history-title > thead > tr .history-content,
+.query-history-content > tbody > tr .history-content {
+	width: 70%;
+}
+.query-result {
+	position: absolute;
+	top: 58px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	background-color: #fff;
+	border-top: 2px solid #3bc0c3;
+}
+.query-result .query-result-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+}
+.query-result .query-result-content .query-result-article {
+	position: absolute;
+	top: 36px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.query-result .query-result-bottom {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 35px;
+	text-align: center;
+}
+.query-result .query-result-bottom a.btn-first,
+.query-result .query-result-bottom a.btn-prev,
+.query-result .query-result-bottom a.btn-next {
+	border-radius: 3px;
+}
+.query-result .query-result-bottom a.btn-prev,
+.query-result .query-result-bottom a.btn-next {
+	margin-left: 5px;
+}
+.relation-body,
+.user-body {
+	position: absolute;
+	top: 37px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.relation-operate,
+.user-operate {
+	padding: 8px;
+	background-color: #fff;
+}
+.relation-operate .btn-add,
+.relation-operate .btn-alter,
+.relation-operate .btn-delete,
+.user-operate .btn-add,
+.user-operate .btn-alter,
+.user-operate .btn-delete {
+	margin-left: 5px;
+}
+.relation-content,
+.user-content {
+	position: absolute;
+	top: 80px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	background-color: #fff;
+}
+.relation-checkbox {
+	width: 10%;
+}
+.relation-user {
+	width: 30%;
+}
+.relation-group {
+	width: 60%;
+}
+.user-account {
+	width: 20%;
+}
+.user-password {
+	width: 20%;
+}
+.user-company {
+	width: 60%;
+}
+.search-container {
+	position: absolute;
+	top: 12px;
+	right: 55px;
+}
+.search-container .search-input {
+	padding: 5px 25px 5px 8px;
+	border: 1px solid #ccc;
+}
+.search-container .search-icon {
+	position: absolute;
+	top: 7px;
+	right: 8px;
+}
+.logout-icon {
+	position: absolute;
+	top: 18px;
+	right: 20px;
+	cursor: pointer;
+}
+.logout-icon:hover {
+	color: #3bc0c3;
+}
+.monitor-service .service-uuid {
+	font-size: 12px;
+	color: rgb(163, 163, 163);
+}
+.online-user {
+	width: 30%;
+}
+.online-account {
+	width: 50%;
+}
+.online-status {
+	width: 20%;
+}
+
+.query-nav .query-nav-item {
+	display: inline-block;
+	background-color: #fff;
+	padding: 8px 12px;
+	margin-right: 2px;
+	border-bottom: 2px solid #fff;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	text-align: center;
+	color: #a0a0a0;
+}
+.query-nav .query-nav-item.selected {
+	background-color: #3bc0c3;
+	color: #fff;
+	border-bottom-color: #3bc0c3;
+}
+
+.sysmsg-body {
+	position: relative;
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.sysmsg-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+	border: 1px solid #3bc0c3;
+	padding: 20px;
+}
+.sysmsg-tool {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 8px 20px;
+	background-color: #3bc0c3;
+}
+.sysmsg-tool .glyphicon-picture {
+	font-size: 20px;
+	color: #fff;
+}
+.sysmsg-tool .glyphicon-picture > input[type="file"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 20px;
+	cursor: pointer;
+	opacity: 0;
+}
+.sysmsg-tool .btn-send {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+}
